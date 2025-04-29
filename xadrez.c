@@ -4,11 +4,10 @@
 
 int main () {
 
-    //Declaração de constantes e variáveis
-    const int torre = 5, bispo = 5, rainha = 8;
-    int i, j = 0, k = 0;
+    const int torre = 5, bispo = 5, rainha = 8, cavaloV = 2, cavaloH = 1;
+    int i, j = 0, k = 0, l = 1, m;
 
-    //Movimentação da Torre
+
     printf("A torre move-se nessa direção:\n");
 
     for (i = 0; i < torre; i++) {
@@ -17,7 +16,6 @@ int main () {
 
     }
 
-    //Movimentação do Bispo
     printf("\nO bispo move-se nessa direção:\n");
 
     while (j < bispo) {
@@ -27,7 +25,6 @@ int main () {
 
     }
 
-    //Movimentação da Rainha
     printf("\nA rainha move-se nessa direção:\n");
 
     do {
@@ -35,6 +32,19 @@ int main () {
         printf("Esquerda\n");
         k++;
     } while (k < rainha);
+
+    printf("\nO cavalo move-se nessa direção:\n");
+
+    do {
+
+        for (m = 1; m <= 2; m++){
+            printf("Baixo\n");
+        }
+
+        printf("Esquerda\n");
+        l++;
+
+    } while (l<=1);
 
 
     return 0;
