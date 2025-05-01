@@ -1,50 +1,62 @@
 #include <stdio.h>
 
-//Desafio Nivel Novato - Tema 3
+//Desafio Nivel Mestre - Tema 3
+
+void movimentoTorre (int t) {
+   if (t>0){
+        printf("Direita\n");
+        movimentoTorre(t-1);
+    }
+   }
+
+void movimentoBispo (int b) {
+    if (b>0){
+        printf("Cima, Direita\n");
+        movimentoBispo(b-1);
+    }
+}
+
+void movimentoRainha (int r) {
+    if (r>0){
+        printf("Esquerda\n");
+        movimentoRainha(r-1);
+    }
+}
 
 int main () {
 
     const int torre = 5, bispo = 5, rainha = 8, cavaloV = 2, cavaloH = 1;
-    int i, j = 0, k = 0, l = 1, m;
-
 
     printf("A torre move-se nessa direção:\n");
 
-    for (i = 0; i < torre; i++) {
-
-        printf("Direita\n");
-
-    }
+    movimentoTorre(torre);
 
     printf("\nO bispo move-se nessa direção:\n");
 
-    while (j < bispo) {
-
-        printf("Cima, Direita\n");
-        j++;
-
-    }
+    movimentoBispo(bispo);
 
     printf("\nA rainha move-se nessa direção:\n");
 
-    do {
-
-        printf("Esquerda\n");
-        k++;
-    } while (k < rainha);
+    movimentoRainha(rainha);
 
     printf("\nO cavalo move-se nessa direção:\n");
 
-    do {
 
-        for (m = 1; m <= 2; m++){
-            printf("Baixo\n");
+    for (int i = 1; i <= 10; i++){
+
+        if (i > cavaloH){
+            break;
         }
 
-        printf("Esquerda\n");
-        l++;
+        for (int j = 1; j <= 10; j++){
+            if (j > cavaloV){
+                break;
+            }
+            printf("Cima\n");
+        }
 
-    } while (l<=1);
+        printf("Direita\n");
+    }
 
 
     return 0;
